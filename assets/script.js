@@ -27,13 +27,13 @@ function getPasswordOptions() {
   var passLength = (prompt('How many characters long would you like your password to be?'));
 
   // Conditional statement to check if password length is a number. Prompts restart if this evaluates false
-  while (isNaN(passLength) === true) {
+  while (isNaN(passLength)) {
     alert('Password length must be provided as a number');
     var passLength = (prompt('How many characters long would you like your password to be?'));
   }
 
   // Conditional statement to check if password length is at least 8 characters long. Prompts restart if this evaluates false
-  while (passLength <8 || passLength >128 || isNaN(passLength)) {
+  while (passLength <8 || passLength >128) {
     alert('Your password must be at least 8 characters but no longer than 128.');
     var passLength = (prompt('How many characters long would you like your password to be?'));
   }
