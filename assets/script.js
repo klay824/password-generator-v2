@@ -91,14 +91,20 @@ function generatePassword() {
 
   // Array to store types of characters to include in password
   // var possibleCharacters = [specialCharacters, numericCharacters, lowerCaseCharacters, upperCaseCharacters];
-  if(options.specialCharactersConfirm === true){
+  if(options.specialCharactersConfirm === true) {
     result = result.concat(specialArr)
   }
   if(options.numericCharactersConfirm === true) {
     result = result.concat(numericCharacters)
   }
 
+  if(options.lowerCaseCharactersConfirm === true) {
+    result = result.concat(lowerArr)
+  }
 
+  if(options.upperCaseCharactersConfirm === true) {
+    result = result.concat(upperArr)
+  }
   
   //Work-in-Progress
 
