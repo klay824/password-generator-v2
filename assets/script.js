@@ -7,18 +7,19 @@ generateBtn.addEventListener('click', writePassword);
 
 // Array of special characters to be included in password
 var specialCharacters = "~`!@#$%^&*()-_=+':;?/.>,<";
-var specialArr = specialCharacters.split("")
-// console.log(specialArr)
+var specialArr = specialCharacters.split("");
+
 // Array of numeric characters to be included in password
-var numericCharacters =["0", "1", "2", "3", "4", "5" ,"6","7", "8", "9"];
+var numericCharacters = "0123456789";
+var numericArr = numericCharacters.split("");
 
 // Array of lowercase characters to be included in password
 var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
-var lowerArr = lowerCaseCharacters.split("")
+var lowerArr = lowerCaseCharacters.split("");
 
 // Array of uppercase characters to be included in password
 
-var upperArr = lowerCaseCharacters.toUpperCase().split("")
+var upperArr = lowerCaseCharacters.toUpperCase().split("");
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -86,16 +87,17 @@ function generatePassword() {
   // Running the function to trigger the prompts and get the users answers back as an object
   var options = getPasswordOptions();
 
-  // Array to store password as it's being concatenated 
+  // Array to store password as it's being concatenated from below conditional statements
   var result = [];
 
-  // Array to store types of characters to include in password
-  // var possibleCharacters = [specialCharacters, numericCharacters, lowerCaseCharacters, upperCaseCharacters];
+
+  // Conditional statements to concat the user's chosen password parameters along with the available characters  
   if(options.specialCharactersConfirm === true) {
     result = result.concat(specialArr)
   }
+
   if(options.numericCharactersConfirm === true) {
-    result = result.concat(numericCharacters)
+    result = result.concat(numericArr)
   }
 
   if(options.lowerCaseCharactersConfirm === true) {
@@ -106,40 +108,7 @@ function generatePassword() {
     result = result.concat(upperArr)
   }
   
-  //Work-in-Progress
-
-  // console.log(result)
-  // Array to contain one of each type of chosen character to ensure each will be used
-  // var guaranteedCharacters = options;
-
-  // Conditional statement that adds array of special characters into array of possible characters based on user input
-  // Push new random special character to guaranteedCharacters to make at least one of the value is always included 
-  // if (options.push) {
-  //   specialCharactersConfirm;
-  //   return guaranteedCharacters + possibleCharacters;
-  // }
-
-  // Conditional statement that adds array of numeric characters into array of possible characters based on user input
-  // Push new random numeric character to guaranteedCharacters to make at least one of the value is always included 
-  // if (options.push) {
-  //   options.push(numericCharactersConfirm);
-  //   return guaranteedCharacters + possibleCharacters;
-  // }
-
-  // Conditional statement that adds array of lowercase characters into array of possible characters based on user input
-  // Push new random lower-cased character to guaranteedCharacters to make at least one of the value is always included 
-  // if (options.push) {
-  //   options.push(lowerCaseCharactersConfirm);
-  //   return guaranteedCharacters + possibleCharacters;
-  // }
-
-  // Conditional statement that adds array of uppercase characters into array of possible characters based on user input
-  // Push new random upper-cased character to guaranteedCharacters to make at least one of the value is always included 
-  // if (options.push) {
-  //   upperCaseCharactersConfirm;
-  //   return guaranteedCharacters + possibleCharacters;
-  // }
-
+  
   // For loop to iterate over the password length provided from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
   var randompassword =""
   for (var i = 0; i < options.passLength; i++) {
@@ -147,14 +116,7 @@ function generatePassword() {
     // return result;
   }
 
-  // For loop to iterate the guarenteed characters to overwrite the generated characters
-  // for (var i = 0; i < options; i++) {
-    
-  // }
-
   return randompassword
-  // // Join the array to make it a singular string to return 
-  // return
 }
 
 
