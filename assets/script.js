@@ -17,9 +17,9 @@ var numericArr = numericCharacters.split("");
 var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 var lowerArr = lowerCaseCharacters.split("");
 
-// Array of uppercase characters to be included in password
-
+// Array of uppercase characters to be included in password; my tutor showed me this .split used along with the .toUpperCase and it's amazing
 var upperArr = lowerCaseCharacters.toUpperCase().split("");
+
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -53,14 +53,14 @@ function getPasswordOptions() {
   var upperCaseCharactersConfirm = (confirm('Would you like to include uppercase letters in your password? OK for yes; Cancel for no.'));
 
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
-  if (specialCharactersConfirm === false && numericCharactersConfirm === false && lowerCaseCharactersConfirm === false && upperCaseCharactersConfirm === false) {
+  while (specialCharactersConfirm === false && numericCharactersConfirm === false && lowerCaseCharactersConfirm === false && upperCaseCharactersConfirm === false) {
     alert('You must select at least one of the following: Special Character, Numeric Character, Lowercase Letter, or Uppercase Letter.');
     var specialCharactersConfirm = (confirm('Would you like to include special characters in your password? OK for yes; Cancel for no.'));
     var numericCharactersConfirm = (confirm('Would you like to include numeric characters in your password? OK for yes; Cancel for no.'));
     var lowerCaseCharactersConfirm = (confirm('Would you like to include lowercase letters in your password? OK for yes; Cancel for no.'));
     var upperCaseCharactersConfirm = (confirm('Would you like to include uppercase letters in your password? OK for yes; Cancel for no.'));
-    return;
   }
+  
   // Object to store user input variables
   var passwordOptions = {
     passLength,
