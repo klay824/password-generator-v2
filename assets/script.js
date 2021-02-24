@@ -4,8 +4,6 @@ var generateBtn = document.querySelector('#generate');
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-var testString = "An actual sentence"
-var words = testString.length
 
 // Array of special characters to be included in password
 var specialCharacters = "~`!@#$%^&*()-_=+':;?/.>,<";
@@ -19,10 +17,9 @@ var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 var lowerArr = lowerCaseCharacters.split("")
 
 // Array of uppercase characters to be included in password
-// var upperCaseCharacters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+
 var upperArr = lowerCaseCharacters.toUpperCase().split("")
-// console.log(lowerArr)
-// console.log(upperArr)
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   // Variable to store length of password from user input
@@ -100,10 +97,12 @@ function generatePassword() {
   if(options.numericCharactersConfirm === true) {
     result = result.concat(numericCharacters)
   }
+
+
   
   //Work-in-Progress
 
-  console.log(result)
+  // console.log(result)
   // Array to contain one of each type of chosen character to ensure each will be used
   // var guaranteedCharacters = options;
 
