@@ -26,14 +26,14 @@ function getPasswordOptions() {
   // Variable to store length of password from user input
   var passLength = (prompt('How many characters long would you like your password to be?'));
 
-  // Conditional statement to check if password length is a number. Prompts end if this evaluates false
-  if (isNaN(passLength) === true) {
+  // Conditional statement to check if password length is a number. Prompts restart if this evaluates false
+  while (isNaN(passLength) === true) {
     alert('Password length must be provided as a number');
-    return;
+    var passLength = (prompt('How many characters long would you like your password to be?'));
   }
 
-  // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
-  while (passLength <8 || passLength >128) {
+  // Conditional statement to check if password length is at least 8 characters long. Prompts restart if this evaluates false
+  while (passLength <8 || passLength >128 || isNaN(passLength)) {
     alert('Your password must be at least 8 characters but no longer than 128.');
     var passLength = (prompt('How many characters long would you like your password to be?'));
   }
@@ -52,7 +52,7 @@ function getPasswordOptions() {
   // Variable to store boolean regarding the inclusion of uppercase characters
   var upperCaseCharactersConfirm = (confirm('Would you like to include uppercase letters in your password? OK for yes; Cancel for no.'));
 
-  // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+  // Conditional statement to check if user does not include any types of characters. Password generator restarts if all four variables evaluate to false
   while (specialCharactersConfirm === false && numericCharactersConfirm === false && lowerCaseCharactersConfirm === false && upperCaseCharactersConfirm === false) {
     alert('You must select at least one of the following: Special Character, Numeric Character, Lowercase Letter, or Uppercase Letter.');
     var specialCharactersConfirm = (confirm('Would you like to include special characters in your password? OK for yes; Cancel for no.'));
@@ -110,13 +110,13 @@ function generatePassword() {
   
   
   // For loop to iterate over the password length provided from the options object, selecting random indices from the array of possible characters and concatenating those characters into the result variable
-  var randompassword =""
+  var randomPassword = ""
   for (var i = 0; i < options.passLength; i++) {
-    var randompassword = randompassword + getRandomElement(result);
+    var randomPassword = randomPassword + getRandomElement(result);
     // return result;
   }
 
-  return randompassword
+  return randomPassword
 }
 
 
