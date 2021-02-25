@@ -6,6 +6,8 @@ Upon chosing a number between the parameters, the user will be asked if they wan
 
 After the user has chosen at least one parameter, the program will generate a password using the random parameters the user chose and output it to the HTML.
 
+Please follow [this link](https://klay824.github.io/password-generator-v2/) to view the live application.
+
 ## GIF Demonstration of Application
 ![](assets/demo/video-capture.gif)
 
